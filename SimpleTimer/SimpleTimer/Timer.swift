@@ -64,7 +64,7 @@ public class Timer: NSObject {
         leftTime = timeInteral
     }
     
-    public func start(#updateTick: (NSTimeInterval -> Void)?, stopHandler: (Bool -> Void)?) -> (start: Bool, error: NSError?) {
+    public func start(updateTick: (NSTimeInterval -> Void)?, stopHandler: (Bool -> Void)?) -> (start: Bool, error: NSError?) {
         if running {
             return (false, NSError(domain: timerErrorDomain, code: SimperTimerError.AlreadyRunning.rawValue, userInfo:nil))
         }
@@ -78,7 +78,7 @@ public class Timer: NSObject {
         
         running = true
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:"countTick", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector:#selector(Timer.countTick), userInfo: nil, repeats: true)
         
         return (true, nil)
     }

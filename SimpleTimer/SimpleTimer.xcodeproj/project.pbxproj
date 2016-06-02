@@ -435,7 +435,9 @@
 		D127E234198B34FC00A09E62 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "OneV's Den";
 				TargetAttributes = {
 					D127E23B198B34FC00A09E62 = {
@@ -662,6 +664,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -729,6 +732,7 @@
 				CODE_SIGN_ENTITLEMENTS = SimpleTimer/SimpleTimer.entitlements;
 				INFOPLIST_FILE = SimpleTimer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -741,6 +745,7 @@
 				CODE_SIGN_ENTITLEMENTS = SimpleTimer/SimpleTimer.entitlements;
 				INFOPLIST_FILE = SimpleTimer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -759,6 +764,7 @@
 				);
 				INFOPLIST_FILE = SimpleTimerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -774,6 +780,7 @@
 				);
 				INFOPLIST_FILE = SimpleTimerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -791,6 +798,7 @@
 				);
 				INFOPLIST_FILE = SimpleTimerTodayExtenstion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.SimpleTimer.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -805,6 +813,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SimpleTimerTodayExtenstion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.SimpleTimer.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -827,6 +836,7 @@
 				INFOPLIST_FILE = SimpleTimerKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -846,6 +856,7 @@
 				INFOPLIST_FILE = SimpleTimerKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -866,6 +877,7 @@
 				);
 				INFOPLIST_FILE = SimpleTimerKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -879,6 +891,7 @@
 				);
 				INFOPLIST_FILE = SimpleTimerKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -920,6 +933,7 @@
 				D12A182D198CB2E0007CE843 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D12A1850198CB9F0007CE843 /* Build configuration list for PBXNativeTarget "SimpleTimerKit" */ = {
 			isa = XCConfigurationList;
@@ -928,6 +942,7 @@
 				D12A1852198CB9F0007CE843 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D12A1854198CB9F0007CE843 /* Build configuration list for PBXNativeTarget "SimpleTimerKitTests" */ = {
 			isa = XCConfigurationList;
@@ -936,6 +951,7 @@
 				D12A1856198CB9F0007CE843 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

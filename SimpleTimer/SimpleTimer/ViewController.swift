@@ -22,9 +22,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         NSNotificationCenter.defaultCenter()
-            .addObserver(self, selector: "applicationWillResignActive",name: UIApplicationWillResignActiveNotification, object: nil)
+            .addObserver(self, selector: #selector(ViewController.applicationWillResignActive),name: UIApplicationWillResignActiveNotification, object: nil)
         NSNotificationCenter.defaultCenter()
-            .addObserver(self, selector: "taskFinishedInWidget", name: taskDidFinishedInWidgetNotification, object: nil)
+            .addObserver(self, selector: #selector(ViewController.taskFinishedInWidget), name: taskDidFinishedInWidgetNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         lblTimer.text = timer.leftTimeString
     }
     
-    private func showFinishAlert(# finished: Bool) {
+    private func showFinishAlert(finished: Bool) {
         let ac = UIAlertController(title: nil , message: finished ? "Finished" : "Stopped", preferredStyle: .Alert)
         ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: {[weak ac] action in ac!.dismissViewControllerAnimated(true, completion: nil)}))
             
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
             let (stopped, error) = realTimer.stop(false)
             if !stopped {
                 if let realError = error {
-                    println("error: \(realError.code)")
+                    print("error: \(realError.code)")
                 }
             }
         }
@@ -89,11 +89,11 @@ class ViewController: UIViewController {
             timer = Timer(timeInteral: defaultTimeInterval)
         }
         
-        let (started, error) = timer.start(updateTick: {
+        let (started, error) = timer.start({
                 [weak self] leftTick in self!.updateLabel()
             }, stopHandler: {
                 [weak self] finished in
-                self!.showFinishAlert(finished: finished)
+                self!.showFinishAlert(finished)
                 self!.timer = nil
             })
         
@@ -101,7 +101,7 @@ class ViewController: UIViewController {
             updateLabel()
         } else {
             if let realError = error {
-                println("error: \(realError.code)")
+                print("error: \(realError.code)")
             }
         }
     }
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
             let (stopped, error) = realTimer.stop(true)
             if !stopped {
                 if let realError = error {
-                    println("error: \(realError.code)")
+                    print("error: \(realError.code)")
                 }
             }
         }

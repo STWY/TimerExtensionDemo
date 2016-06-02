@@ -30,7 +30,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             
             if (leftTime > 0) {
                 timer = Timer(timeInteral: NSTimeInterval(leftTime))
-                timer.start(updateTick: {
+                timer.start({
                     [weak self] leftTick in self!.updateLabel()
                     }, stopHandler: {
                         [weak self] finished in self!.showOpenAppButton()
@@ -51,7 +51,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         let button = UIButton(frame: CGRectMake(0, 50, 50, 63))
         button.setTitle("Open", forState: UIControlState.Normal)
-        button.addTarget(self, action: "buttonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: #selector(TodayViewController.buttonPressed(_:)), forControlEvents: UIControlEvents.TouchUpInside)
 
         view.addSubview(button)
         
@@ -66,7 +66,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Dispose of any resources that can be recreated.
     }
     
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
 
         // If an error is encoutered, use NCUpdateResult.Failed
